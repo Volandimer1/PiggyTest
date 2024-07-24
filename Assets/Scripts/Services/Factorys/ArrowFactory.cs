@@ -15,7 +15,7 @@ public class ArrowFactory
             { ArrowType.Default, new ArrowData(ArrowType.Default, 10) },
             { ArrowType.Heavy, new ArrowData(ArrowType.Heavy, 20) },
             { ArrowType.Fire, new ArrowData(ArrowType.Fire, 15) },
-            { ArrowType.Ice, new ArrowData(ArrowType.Ice, 10) }
+            { ArrowType.Ice, new ArrowData(ArrowType.Ice, 12) }
         };
     }
 
