@@ -69,6 +69,16 @@ public class ArcherShootingState : AbstractArcherState
 
     private void ChangeTarget()
     {
+        while (_targets[0] == null)
+        {
+            _targets.RemoveAt(0);
+            if (_targets.Count == 0)
+            {
+                fsm.TransitionToState<ArcherIdleState>();
+                return;
+            }
+        }
+
         Vector2 targetPosition = _targets[0].transform.position;
         Vector2 startPosition = _arrowStartPosition.position;
         float bodyAngle = CalculateLaunchAngle(startPosition, targetPosition);
