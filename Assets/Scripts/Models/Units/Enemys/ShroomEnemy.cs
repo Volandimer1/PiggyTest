@@ -1,4 +1,3 @@
-using System.ComponentModel.Design;
 using UnityEngine;
 
 public class ShroomEnemy : MonoBehaviour, ITargetable
