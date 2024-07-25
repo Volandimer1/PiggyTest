@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArrowConroller : MonoBehaviour
+public class ArrowConroller : MonoBehaviour, IHaveDamage
 {
     public ArrowData ArrowData { get; private set; }
     [SerializeField] private Rigidbody2D _rigidbody2D;
@@ -15,6 +15,12 @@ public class ArrowConroller : MonoBehaviour
         _rigidbody2D.velocity = velocity;
 
         transform.rotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+    }
+
+    public int GetDamageValue()
+    {
+        DestroyArrow();
+        return ArrowData.Damage;
     }
 
     public void DestroyArrow()

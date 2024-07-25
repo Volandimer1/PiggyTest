@@ -29,12 +29,11 @@ public class ShroomEnemy : MonoBehaviour, ITargetable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        ArrowConroller arrowConroller;
+        IHaveDamage damager;
 
-        if (other.gameObject.TryGetComponent<ArrowConroller>(out arrowConroller))
+        if (other.gameObject.TryGetComponent<IHaveDamage>(out damager))
         {
-            ExecuteHitEction(arrowConroller.ArrowData.Damage);
-            arrowConroller.DestroyArrow();
+            ExecuteHitEction(damager.GetDamageValue());
         }
     }
 }
